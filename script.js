@@ -74,9 +74,16 @@ const func = () => {
                     break;
             }
         }
-        const spol = Number(val[9] + val[10] + val[11]) < 500 ? "muško" : "žensko";
-        p.innerText = `Rođeni ste ${day}.${month}.${year} u nekom od ovih mjesta: ${place} i vi ste ${spol}.`;
+        const sex = Number(val[9] + val[10] + val[11]) < 500 ? "muško" : "žensko";
+        p.innerText = `Rođeni ste ${day}.${month}.${year} u nekom od ovih mjesta: ${place} i vi ste ${sex}.`;
     }
 }
 
 document.getElementById("btn").addEventListener("click", func);
+
+document.getElementById("jmb").addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        func();
+    }
+})

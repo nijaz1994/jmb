@@ -75,7 +75,7 @@ const func = () => {
             }
         }
         const sex = Number(val[9] + val[10] + val[11]) < 500 ? "muško" : "žensko";
-        p.innerText = `Rođeni ste ${day}.${month}.${year} u nekom od ovih mjesta: ${place} i vi ste ${sex}.`;
+        p.innerHTML = `Rođeni ste <span style="text-decoration: underline;">${day}.${month}.${year}.</span> u nekom od ovih mjesta: <span style="background-color: yellow;">${place}</span> i vi ste <span style="text-decoration: underline;">${sex}</span>.`;
     }
 }
 
